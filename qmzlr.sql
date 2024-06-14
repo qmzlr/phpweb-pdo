@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 16 2024 г., 17:52
+-- Время создания: Июн 14 2024 г., 13:00
 -- Версия сервера: 8.0.30
 -- Версия PHP: 8.1.9
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- База данных: `qmzlr`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `post`
+--
+
+CREATE TABLE `post` (
+  `id` bigint NOT NULL,
+  `title` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `post`
+--
+
+INSERT INTO `post` (`id`, `title`, `content`) VALUES
+(1, 'sadfas', 'fda');
 
 -- --------------------------------------------------------
 
@@ -41,11 +60,18 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `full_name`, `login`, `email`, `password`, `avatar`) VALUES
-(10, 'Дроздов В С', 'drozd', 'dsfasdgda', '202cb962ac59075b964b07152d234b70', 'uploads/1715868932The_Witcher_3_Wild_Hunt_Icon3_Win8_Wide.png');
+(10, 'Дроздов В С', 'drozd', 'dsfasdgda', '202cb962ac59075b964b07152d234b70', 'uploads/1715868932The_Witcher_3_Wild_Hunt_Icon3_Win8_Wide.png'),
+(11, 'fdsfa', 'qmzlr', 'dsafsdf', '202cb962ac59075b964b07152d234b70', 'uploads/1718359030');
 
 --
 -- Индексы сохранённых таблиц
 --
+
+--
+-- Индексы таблицы `post`
+--
+ALTER TABLE `post`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `users`
@@ -58,10 +84,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `post`
+--
+ALTER TABLE `post`
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -36,7 +36,7 @@ if (isset($_SESSION['user'])){
     <input type="file" name="avatar">
     <button type="submit"> Зарегистироваться</button>
     <p>
-        У вас есть аккаунт? - <a href = "index.php"> авторизироваться </a>
+        У вас есть аккаунт? - <a href = "authorization.php"> авторизироваться </a>
     </p>
 
        <?php

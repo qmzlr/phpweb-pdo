@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user'])){
-   header('location: ../index.php');
+   header('location: ../authorization.php');
 }
 ?>
 
@@ -21,6 +21,7 @@ if (!isset($_SESSION['user'])){
       <p>Ваш Email: <?php echo $_SESSION['user']['email'];?></p>
       <p>Ваше ФИО: <?php echo $_SESSION['user']['full_name'];?></p>
       <a href="vendor/logout.php">Выход</a>
+      <a href="index.php">На главную</a>
    </div>
 </body>
 </html>

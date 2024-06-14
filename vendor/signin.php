@@ -15,8 +15,8 @@ if (mysqli_num_rows($check_user) > 0) {
       'avatar' => $user['avatar'],
       'email' => $user['email'],
    ];
-   header('Location: ../profile.php');
+   header('Location: ../index.php');
 } else {
    $_SESSION['message'] = 'Неверный логин или пароль';
-   header('Location: ../index.php');
+   header('Location: ../authorization.php');
 }

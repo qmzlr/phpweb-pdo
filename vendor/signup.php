@@ -19,7 +19,7 @@ if ($password == $password_confirm) {
    $sql = "INSERT INTO `users` (`id`, `full_name`, `login`, `email`, `password`, `avatar`) VALUES (NULL, '$full_name', '$login', '$mail', '$password', '$path')";
    mysqli_query($connect, $sql);
    $_SESSION['message'] = 'Регистрация прошла успешно';
-   header('location: ../index.php');
+   header('location: ../authorization.php');
 } else {
    $_SESSION['message'] = 'Пароли не совпадают';
    header('Location: ../register.php');

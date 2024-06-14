@@ -77,7 +77,9 @@ $posts = $statement->fetchAll(Pdo::FETCH_ASSOC);
                   endforeach; ?>
 
                </div>
+               <?php if (isset($_SESSION['user'])) { ?>
                <a href="crud/add.php" class="btn btn-success">Добавить статью</a>
+                <?php }?>
             </div>
          </div>
       </div>

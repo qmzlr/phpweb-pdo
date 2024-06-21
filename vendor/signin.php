@@ -5,10 +5,13 @@ require_once 'connect.php';
 $login = $_POST['login'];
 $password = md5($_POST['password']);
 
-$check_user = mysqli_query($connect, "SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$password'");
+$sql = "SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$password'";
+$startement = $pdo->prepare($sql);
+$startement->execute();
+$row = $startement->rowCount();
 
-if (mysqli_num_rows($check_user) > 0) {
-   $user = mysqli_fetch_assoc($check_user);
+if ($row > 0) {
+   $user = $startement->fetch(PDO::FETCH_ASSOC);
    $_SESSION['user'] = [
       'id' => $user['id'],
       'full_name' => $user['full_name'],

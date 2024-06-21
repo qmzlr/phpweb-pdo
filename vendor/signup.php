@@ -17,7 +17,9 @@ if ($password == $password_confirm) {
       header('location: ../register.php');
    }
    $sql = "INSERT INTO `users` (`id`, `full_name`, `login`, `email`, `password`, `avatar`) VALUES (NULL, '$full_name', '$login', '$mail', '$password', '$path')";
-   mysqli_query($connect, $sql);
+
+   $statement = $pdo -> prepare($sql);
+   $statement -> execute();
    $_SESSION['message'] = 'Регистрация прошла успешно';
    header('location: ../authorization.php');
 } else {

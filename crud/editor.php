@@ -1,5 +1,5 @@
 <?php
-    require 'connect.php';
+require '../vendor/connect.php';
 
     $sql = "SELECT * FROM post where id=:id";
     $statement = $pdo -> prepare($sql);

@@ -1,7 +1,3 @@
 <?php
-$connect = mysqli_connect('localhost', 'root', '', 'qmzlr');
 
-if (!$connect) {
-   die('ошибка');
-}
-
+$pdo = new PDO('mysql:host=localhost;dbname=qmzlr', 'root', '');

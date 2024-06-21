@@ -11,7 +11,7 @@
 <?php
 session_start();
 //Подключится к БД
-require 'crud/connect.php';
+require 'vendor/connect.php';
 
 //Сделать запрос select
 $sql = "SELECT * FROM post";
